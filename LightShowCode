@@ -1,0 +1,88 @@
+int eye1 = 7;
+int eye2 = 12;
+int tooth1 = 8;
+int tooth2 = 9;
+int tooth3 = 10;
+int tooth4 = 11;
+int leds[] = {8, 9, 10, 11};
+int i = 8;
+int j = 50;
+int count1 = 0;
+int count2 = 0;
+int count4 = 0;
+int count3 = 0;
+int a = 0;
+ 
+void setup() {
+  pinMode(eye1, OUTPUT);
+  pinMode(eye2, OUTPUT);
+  pinMode(tooth1, OUTPUT);
+  pinMode(tooth2, OUTPUT);
+  pinMode(tooth3, OUTPUT);
+  pinMode(tooth4, OUTPUT);
+}
+ 
+void loop() {
+  digitalWrite(eye1, HIGH);
+  digitalWrite(eye2, HIGH);
+ 
+while(count1 < 3){
+  for (i = 0; i <= 3; i++){ 
+    for (j = 0; j <=255; j+=50){
+      analogWrite(leds[i], j);
+      delay(100);
+      }
+  }
+  count1 = count1 + 1;
+}
+delay(700);
+while (count2 < 3){
+  for (count4 = 0; count4<27; count4++){
+    digitalWrite(8, HIGH);
+    digitalWrite(9, HIGH);
+    digitalWrite(10, HIGH);
+    digitalWrite(11, HIGH);
+    delay(30);
+    digitalWrite(8, LOW);
+    digitalWrite(9, LOW);
+    digitalWrite(10, LOW);
+    digitalWrite(11, LOW);
+    delay(30);
+  }
+  delay(800);
+count2 = count2 + 1;
+}
+ 
+digitalWrite(8, LOW);
+digitalWrite(9, LOW);
+digitalWrite(10, LOW);
+digitalWrite(11, LOW);
+ 
+  for (j = 0; j <=255; j+=10){
+    for (i = 0; i <= 3; i++){ 
+        analogWrite(leds[i], j);
+        delay(50);
+        }
+    }
+  for (a = 0; a <=20; a++){
+    digitalWrite(8, HIGH);
+    digitalWrite(9, HIGH);
+    digitalWrite(10, HIGH);
+    digitalWrite(11, HIGH);
+    delay(30);
+    digitalWrite(8, LOW);
+    digitalWrite(9, LOW);
+    digitalWrite(10, LOW);
+    digitalWrite(11, LOW);
+    delay(30);
+ 
+  }
+ 
+digitalWrite(12, LOW);
+digitalWrite(7, LOW);
+digitalWrite(8, LOW);
+digitalWrite(9, LOW);
+digitalWrite(10, LOW);
+digitalWrite(11, LOW);
+}
+ 
